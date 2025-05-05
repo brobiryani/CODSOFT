@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 8%; /* Netflix dark background */
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 100% 45%; /* Netflix red */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 45%;
+
+    --radius: 0.25rem; /* Netflix uses subtle rounding */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-movie-primary text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.movie-card {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+.genre-tag {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-medium bg-movie-accent bg-opacity-20 text-movie-accent;
+}
